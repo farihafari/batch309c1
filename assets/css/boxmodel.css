@@ -1,0 +1,13 @@
+div{
+    width: 60%;
+    background-color: blue;
+    padding: 100px;
+    margin: 200px auto;
+    box-shadow: 15px 17px 15px 8px rgb(191, 17, 17);
+}
+p{
+    padding: 40px;
+    color: white;
+    background-color: green;
+    
+}

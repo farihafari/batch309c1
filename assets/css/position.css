@@ -1,0 +1,61 @@
+div{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+  font-size: 40px;
+  color: white;
+}
+.a1{
+    background-color: rgb(21, 255, 0);  
+    position: absolute;
+    /* right: 0px; */
+    /* position: fixed;
+    top: 100px;
+    position: sticky;
+    top:150px; */
+    top: 200px;
+    left: 200px;
+    z-index: 2;
+}
+#chlid{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.a2{
+    background-color: rgb(0, 242, 255);  
+    position: absolute;
+    top: 250px;
+    left: 250px;
+    z-index: 1;
+}
+.a3{
+    background-color: rgb(174, 0, 255); 
+    /* position: relative; 
+    left: 200px;
+   bottom: 100px; */
+   position: absolute;
+   top: 300px;
+   left: 300px;
+}
+.a4{
+    background-color: rgb(212, 255, 0);  
+    position: absolute;
+    top: 350px;
+    left: 350px;
+}
+.a5{
+    background-color: rgb(13, 69, 91);  
+    position: absolute;
+    top: 400px;
+    left: 400px;
+}
+.a6{
+    background-color: rgb(9, 19, 8); 
+    position: absolute;
+    top: 450px;
+    left: 450px; 
+}

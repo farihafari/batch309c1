@@ -1,0 +1,68 @@
+/* p{
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: blue;
+    text-transform: uppercase;
+    text-shadow: 3px 4px 3px rgb(190, 34, 34);
+} */
+a{
+    text-decoration: none;
+}
+a:link{
+    color: brown;
+}
+a:visited{
+    color: green;
+}
+a:hover{
+    color: chocolate;
+}
+a:active{
+    color: red;
+}
+#ab:hover{
+    text-decoration: underline;
+    color: yellow;
+}
+p:first-child{
+    background-color: blueviolet;
+}
+p:last-child{
+    color: brown;
+}
+p:nth-child(even){
+    color: aliceblue;
+    background-color: blue;
+}
+p:nth-child(odd){
+    color: rgb(8, 72, 128);
+    background-color: rgba(0, 255, 247, 0.201);
+}
+p::first-letter{
+    color: darkblue;
+    font-size: 50px;
+    font-weight: bold;
+}
+p::first-line{
+    color: rgb(0, 139, 14);
+    font-size: 20px;
+    font-weight: bold;
+}
+p::before{
+    content: "this is before text";
+  
+    font-size: 20px;
+    font-weight: bold;
+}
+p::after{
+    content: "this is after text";
+  
+    font-size: 20px;
+    font-weight: bold;
+}
+span{
+    color: brown;
+    font-size: 50px;
+    
+}
