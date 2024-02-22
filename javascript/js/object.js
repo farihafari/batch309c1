@@ -1,27 +1,27 @@
 let mobile = [
-    {name:"infinix aX",
+    {"name":"infinix aX",
 storage:"128GB",
 price:46000,
 image:"js/images/img1.jpg"
 },
-{name:"infinix b",
+{"name":"infinix b",
 storage:"128GB",
 price:46000,
 image:"js/images/img2.jpg"
 },
-{name:"infinix c",
+{"name":"infinix c",
 storage:"128GB",
 price:46000,
 image:"js/images/img3.jpg"
 },
-{name:"infinix d",
+{"name":"infinix d",
 storage:"128GB",
 price:46000,
 image:"js/images/img4.jpg"
 }
 ]
 // console.log(obj)
-// // document.write(obj.name+" "+obj.email+" "+obj.phone);
+// // document.write(obj."name"+" "+obj.email+" "+obj.phone);
 // for(let key in obj){
 //     console.log(key);
 
