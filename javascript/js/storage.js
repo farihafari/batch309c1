@@ -10,7 +10,7 @@ function local_Storage(){
     localStorage.setItem('email',"jb@gmail.com");
     localStorage.setItem('password',123);
 localStorage.removeItem('password')
-localStorage.clear()
+// localStorage.clear()
 let getValue = localStorage.getItem('name');
 console.log(getValue);
 }

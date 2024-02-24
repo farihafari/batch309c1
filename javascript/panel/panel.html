@@ -9,10 +9,25 @@
 <body>
     <div class="container">
         <h1 class="text-center text-capitalize text-primary">User Dashboard</h1>
-        <p class="py m text-capitalize ">dear user_name! welcome to dashboard</p>
-        <button>logout </button>
-        <button>remove account </button>
+        <p class="py m text-capitalize">dear <span id="uName">user_name</span> ! welcome to dashboard</p>
+        
+        <button onclick="logOut()">logout </button>
+        <button onclick="removeAccount()">remove account </button>
 
     </div>
+    <script>
+let getLocalName = localStorage.getItem('name');
+let uname = document.querySelector("#uName");
+uname.innerHTML=getLocalName;
+uname.style.color="red";
+function logOut(){
+    window.location.href= "login.html"
+}
+function removeAccount(){
+    localStorage.clear();
+    alert("your account is successfully removed")
+    location.assign('registration.html')
+}
+    </script>
 </body>
 </html>
