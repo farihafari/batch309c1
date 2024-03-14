@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-info text-center text-capitalize my-3">user details</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <label for="" >name</label>
+                <input type="text" class="form-control my-3" id="inp">
+                <button class="btn btn-primary" id="btn">click</button>
+             
+            </div>
+        </div>
+        <p class="text-center text-capitalize"></p>
+    </div>
+    <script>
+        $(document).ready(function(){
+           $("button").click(function(){
+            let userInp = $('#inp').val();
+            if(userInp){
+                $('p').html(userInp);
+// $('p').css("background-color","red") //FOR SINGLE property of css
+$('p').css({
+    "background-color":"red",
+    "margin-top":"10px",
+    "color":"white",
+    "border-radius":"3px",
+    "padding":"5px"
+})
+            }else{
+                $('p').html("please fill this required field!").css({
+"color":"red",
+"font-weight":"bold"
+                })
+            }
+
+           })
+        })
+    </script>
+</body>
+</html>

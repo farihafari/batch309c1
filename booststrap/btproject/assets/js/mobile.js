@@ -97,7 +97,7 @@ image:"assets/images/mobile/m1.webp"
 let rowData = document.querySelector("#productData");
 let x ="";
 for(let firstKey in mobiles){
-    console.log(firstKey);
+    // console.log(firstKey);
     // console.log(mobiles[firstKey].length);
     for(let i = 0; i<mobiles[firstKey].length; i++){
         // console.log(mobiles[firstKey][i].price);
@@ -116,3 +116,32 @@ x+=`<div class="col-lg-3 col-md-4 col-sm-6 mt-3">
     }
 }
 rowData.innerHTML = x;
+// search function
+function searchBrand(){
+    let searchData = document.querySelector("#searchData").value.toLowerCase();
+    let y ="";
+    for(let firstKey in mobiles){
+        if(firstKey == searchData){
+            for(i=0;i<mobiles[firstKey].length; i++){
+                y+=`<div class="col-lg-3 col-md-4 col-sm-6 mt-3">
+                <div class="card" >
+                  <img src="${mobiles[firstKey][i].image}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">`+mobiles[firstKey][i].name+`</h5>
+                    <h5 class="card-title">Price: `+mobiles[firstKey][i].price+`</h5>
+                
+                    <p class="card-text"> ${mobiles[firstKey][i].describtion}</p>
+                    <a href="#" class="btn btn-primary">Detail</a>
+                  </div>
+                </div>
+                </div>`
+                // console.log(mobiles[firstKey][i].name)
+            }
+//  console.log(firstKey )
+        }
+       
+      
+    }
+    rowData.innerHTML = y;
+    // console.log("search data "+searchData)
+}
