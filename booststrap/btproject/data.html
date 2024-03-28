@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="/booststrap/jquery/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-info text-center  text-capitalize mt-5">products</h1>
+        <div class="row" id="productData">
+          
+        </div>
+       </div>
+       <script>
+        $(document).ready(function(){
+            // alert("ok")
+            $.ajax({
+                url:"data.json",
+                type:"get",
+               success:function(jsonData){
+// console.log(jsonData)
+let x = "";
+$.each(jsonData,function(keys, values){
+    // console.log(values[1].name)
+    $.each(values,function(index,obj){
+// console.log(obj.name)
+x+=`
+<div class="col-lg-3 col-md-4 col-sm-6 mt-3">
+<div class="card" >
+  <img src="${obj.image}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">`+obj.name+`</h5>
+    <h5 class="card-title">Price: `+obj.price+`</h5>
+
+
+    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${obj.id}">Detail</a>
+  </div>
+</div>
+</div>
+`
+    })
+     
+})
+$("#productData").html(x)
+               } 
+            })
+        })
+       </script>
+</body>
+</html>
