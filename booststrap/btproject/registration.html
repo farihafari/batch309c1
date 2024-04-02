@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css ">
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="/booststrap/jquery/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+    <h1 class="text-capitalize  text-center  text-info">registration form</h1>
+<div class="container">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="Uname" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email </label>
+        <input type="email" class="form-control" id="Uemail" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="text" class="form-control" id="Upass">
+        <div></div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+        <input type="text" class="form-control" id="Ucpass">
+        <div></div>
+      </div>
+      
+      <button type="submit" id="btn" class="btn btn-primary">Sign In</button>
+
+</div>
+<script>
+    $(document).ready(function(){
+        $("#Uname").keyup(function(){
+            let uName = $("#Uname").val();
+            let RegexName = /^[A-Za-z\s]{3,14}$/;
+            if(!RegexName.test(uName)){
+                $(this).css("border","2px solid red");
+                $(this).next('div').html("please enter valid data in this input").css({
+                    "color":"red",
+                    "margin":"5px",
+                    "font-weight":"bold"
+                })
+            }else{
+                $(this).css("border","2px solid green");
+                $(this).next('div').hide();
+            }
+
+        })
+        // email
+        $("#Uemail").keyup(function(){
+            let uEmail = $("#Uemail").val();
+            let RegexEmail = /^[\w]{1,12}[@][a-z]{5,9}[.][a-z]{2,6}$/;
+            if(!RegexEmail.test(uEmail)){
+                $(this).css("border","2px solid red");
+                $(this).next('div').html("please enter valid email pattern ab12@gmail.com in this input").css({
+                    "color":"red",
+                    "margin":"5px",
+                    "font-weight":"bold"
+                })
+            }else{
+                $(this).css("border","2px solid green");
+                $(this).next('div').hide();
+            }
+
+        })
+        $("#Upass").keyup(function(){
+            let uPass = $("#Upass").val();
+            let RegexPass = /^[\w]{8,16}$/;
+            if(!RegexPass.test(uPass)){
+                $(this).css("border","2px solid red");
+                $(this).next('div').html("please enter valid pasword at least 8 characters are required to fill in this input").css({
+                    "color":"red",
+                    "margin":"5px",
+                    "font-weight":"bold"
+                })
+            }else{
+                $(this).css("border","2px solid green");
+                $(this).next('div').hide();
+            }
+
+        })
+        $("#Ucpass").keyup(function(){
+            let uCpass = $("#Ucpass").val();
+            let uPass = $("#Upass").val();
+            if(uCpass!=uPass){
+                $(this).css("border","2px solid red");
+                $(this).next('div').html("confirm password not match with password").css({
+                    "color":"red",
+                    "margin":"5px",
+                    "font-weight":"bold"
+                })
+            }else{
+                $(this).css("border","2px solid green");
+                $(this).next('div').hide();
+            }
+        })
+        function emptyFields(id){
+            if($(id).val()==""){
+                $(id).css("border","2px solid red");
+                $(id).next('div').html("this field is required to fill").css({
+                    "color":"red",
+                    "margin":"5px",
+                    "font-weight":"bold"
+                })
+            }
+        }
+        $("#btn").click(function(){
+            let uName = $("#Uname").val();
+            let uEmail = $("#Uemail").val();
+            let uPass = $("#Upass").val();
+            let uCpass = $("#Ucpass").val();
+            let RegexName = /^[A-Za-z\s]{3,14}$/;
+            let RegexPass = /^[\w]{8,16}$/;
+            let RegexEmail = /^[\w]{1,12}[@][a-z]{5,9}[.][a-z]{2,6}$/;
+
+           if(uName =="" || uEmail =="" || uPass =="" || uCpass ==""){
+            emptyFields("#Uname");
+            emptyFields("#Uemail");
+            emptyFields("#Upass");
+            emptyFields("#Ucpass");
+
+           }else if(!(RegexName.test(uName) && RegexEmail.test(uEmail)&& RegexPass.test(uPass) && uCpass== uPass)){
+            alert("valid data must be required in every field")
+           }else{
+            alert("data submitted")
+           }
+
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center text-capitalize text-info my-3 ">multiple selection of checkbox</h1>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="html" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              html
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input"  type="checkbox" value="css" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              css
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="javascript" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+            javascript
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="bootstrap & jquery" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              bootstrap & jquery
+            </label>
+        </div>
+        <button
+            type="button"
+            class="btn btn-primary my-3"
+        id="btn">
+            Button
+        </button>
+        <p id="data"></p>
+    </div>
+    <script>
+
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                let checkData = $("input[type='checkbox']:checked");
+                // console.log(checkData.length)
+                if(checkData.length>0){
+let checkString = "";
+$.each(checkData,function(){
+    checkString += $(this).val()+" ";
+})
+$("#data").html(checkString);
+                }else{
+                    alert("at least one checkbox must be checked")
+                }
+            })
+        });
+    </script>
+</body>
+</html>
