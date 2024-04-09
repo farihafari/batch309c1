@@ -25,8 +25,10 @@
 // console.log(jsonData)
 let x = "";
 $.each(jsonData,function(keys, values){
-    // console.log(values[1].name)
+    // console.log(values)
+    // console.log(values[0].price)
     $.each(values,function(index,obj){
+        console.log(obj.price);
 // console.log(obj.name)
 x+=`
 <div class="col-lg-3 col-md-4 col-sm-6 mt-3">

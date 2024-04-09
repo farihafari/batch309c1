@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <title>Hello, world!</title>
+    <style>
+        #cities{
+            display: none;
+        }
+    </style>
+  </head>
+  <body class="">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <select class="form-select" aria-label="Default select example" id="countries" >
+
+   
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <select class="form-select" aria-label="Default select example" id="cities">
+  
+                </select>
+            </div>
+           
+        </div>
+    </div>
+   
+
+<script>
+$(document).ready(function(){
+    let data = {
+            pakistan:[
+                "karachi",
+                "lahore",
+                "islamabad",
+                "faislabad",
+                "quetta"
+            ],
+            turkey:[
+                "Antalya",
+                "Ankara",
+                "Bodrum",
+                "İstanbul",
+                "Bursa"
+            ],
+            iran:[
+                "Tehran",
+                "Mashhad",
+                "Khowrhesht",
+                "Eşfahān",
+                "Razavi Khorasan"
+            ]
+        };
+        let countries = "<option selected hidden>select anyone</option>";
+        // console.log("hello")
+        $.each(data,function(key,values){
+            // console.log(values)
+        countries+=`
+<option value="${key}">${key}</option>
+
+`
+       })
+    
+       $("#countries").html(countries);
+
+    $("#countries").on("change",function(){
+   let cities = "";
+       let countryValue = $("#countries").val(); 
+    //    console.log(countryValue)
+for(let keys in data){
+
+    if(keys==countryValue){
+    
+        for(let index in data[keys]){
+    //   console.log(data[keys][index])
+          cities +=`
+                    <option value="${data[keys][index]}">${data[keys][index]}</option>
+                    `
+   
+            }
+        }
+    
+}
+            $("#cities").html(cities).css("display","block");
+    
+
+    })
+})
+</script>
+  </body>
+</html>
