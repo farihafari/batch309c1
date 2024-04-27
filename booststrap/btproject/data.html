@@ -9,7 +9,18 @@
     <script src="/booststrap/jquery/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+
     <div class="container">
+     <div class="row justify-content-end ">
+        <div class="col-lg-5">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">search</label>
+              <input type="search" class="form-control" id="search" >
+            </div>
+
+        </div>
+     </div>  
+    
         <h1 class="text-info text-center  text-capitalize mt-5">products</h1>
         <div class="row" id="productData">
           
@@ -25,10 +36,10 @@
 // console.log(jsonData)
 let x = "";
 $.each(jsonData,function(keys, values){
-    // console.log(values)
+    // console.log(keys)
     // console.log(values[0].price)
     $.each(values,function(index,obj){
-        console.log(obj.price);
+        // console.log(obj.price);
 // console.log(obj.name)
 x+=`
 <div class="col-lg-3 col-md-4 col-sm-6 mt-3">
@@ -48,6 +59,40 @@ x+=`
      
 })
 $("#productData").html(x)
+
+// search
+$("#search").on("input",function(){
+let searchData = $("#search").val().toLowerCase();
+let x = "";
+// console.log(searchData);
+$.each(jsonData,function(keys,values){
+    let filteredData = values.filter(function(brand){
+return brand.name.toLowerCase().indexOf(searchData)>-1;
+});
+
+console.log(filteredData)
+$.each(filteredData,function(index,objectData){
+    x+=`
+<div class="col-lg-3 col-md-4 col-sm-6 mt-3">
+<div class="card" >
+  <img src="${objectData.image}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">`+objectData.name+`</h5>
+    <h5 class="card-title">Price: `+objectData.price+`</h5>
+
+
+    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${objectData.id}">Detail</a>
+  </div>
+</div>
+</div>
+`
+})
+
+})
+
+// console.log(x);
+$("#productData").html(x)
+})
                } 
             })
         })
