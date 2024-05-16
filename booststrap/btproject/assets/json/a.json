@@ -1,0 +1,36 @@
+[
+        {
+        "id":"ip1",
+        "name":"iPhone 15 Pro Max",
+        "storage":"256 GB",
+        "price":539999,
+        "describtion":"iPhone 15 Pro Max 256 GB Apple official 1 year Mercantile Warranty",
+        "image":"assets/images/mobile/m9.webp"
+    },
+    {
+        "id":"ip2",
+        "name":"Apple iPhone 11",
+        "storage":"128GB",
+        "price":214999,
+        "describtion":"Apple iPhone 11 128GB Box Packed (Official Warranty Mercantile) (Both Sim PTA Approved) Non Active - Daraz Like New Phones",
+        "image":"assets/images/mobile/m10.webp"
+    }   
+    ,
+    {
+        "id":"r1",
+        "name":"Redmi 10A",
+        "storage":"3GB Ram 64GB Rom",
+        "price":34999,
+        "describtion":"Redmi 10A || 3GB Ram 64GB Rom || 6.53 Inches IPS Display || 5000 mAh - Battery charging 10W",
+        "image":"assets/images/mobile/m11.webp"
+    },
+    {
+        "id":"r2",
+        "name":"Redmi Note 11",
+        "storage":"6GB Ram 128GB Rom",
+        "price":67999,
+        "describtion":"Redmi Note 11 || 6GB Ram 128GB Rom || 5000mAh Battery",
+        "image":"assets/images/mobile/m12.webp"
+    }
+   
+]
